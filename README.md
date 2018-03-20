@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# jigswap
+A community where you can swap jigsaw puzzles with other enthusiasts
+>>>>>>> 1ba852d59d0c6daad86e43a2a2659d8fafc3998a
