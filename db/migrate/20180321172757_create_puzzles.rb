@@ -4,7 +4,7 @@ class CreatePuzzles < ActiveRecord::Migration[5.1]
       t.string :name
       t.integer :pieces
       t.integer :missing_pieces
-      t.array :previous_owners
+      t.string :previous_owners, array: true
       t.integer :user_id
 
       t.timestamps
