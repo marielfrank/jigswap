@@ -57,6 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+<<<<<<< HEAD
   database: jigswap_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
@@ -83,3 +84,10 @@ production:
   database: jigswap_production
   username: jigswap
   password: <%= ENV['JIGSWAP_DATABASE_PASSWORD'] %>
+=======
+  database: db/test.sqlite3
+
+production:
+  <<: *default
+  database: db/production.sqlite3
+>>>>>>> 23aabd222f6f78c3040abbfbea273f6d7ba4df23
