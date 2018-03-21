@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  pieces: 1
+  missing_pieces: 1
+  previous_owners: 
+  user_id: 1
+
+two:
+  name: MyString
+  pieces: 1
+  missing_pieces: 1
+  previous_owners: 
+  user_id: 1
