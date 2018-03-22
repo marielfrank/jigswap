@@ -1,19 +1,18 @@
 class User < ApplicationRecord
-    validates :name, presence: true
-    validates :email, presence: true, uniqueness: true
+    validates :username, presence: true
+    validates :email, presence: true#, uniqueness: true
     # use bcrypt for password security
     has_secure_password
 
     has_many :puzzles
     has_many :reviews
-    belongs_to :location
+    # belongs_to :location
 
     # authentication/authorization methods
     def admin?
         self.admin
     end
 
-    # # check if user is admin or owner of a resource
     # def owner_or_admin?(resource)
     #     if admin?
     #         true
@@ -24,7 +23,6 @@ class User < ApplicationRecord
     #     end
     # end
 
-    # find or create by oauth user_id
     # def self.set_user_from_oauth(auth)
     #     find_or_create_by(uid: auth['uid']) do |u|
     #         u.name = auth['info']['name']
