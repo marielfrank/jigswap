@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20180323124330) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "previous_owners", array: true
+    t.integer "previous_owners", default: [], array: true
   end
 
   create_table "reviews", force: :cascade do |t|

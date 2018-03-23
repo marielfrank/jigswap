@@ -9,8 +9,8 @@ class Puzzle < ApplicationRecord
     delegate :location, to: :user 
 
     def change_owner(owner_id)
-        prev_owner = self.user
-        self.previous_owners.push(prev_owner)
+        prev_owner_id = self.user.id
+        self.previous_owners.push(prev_owner_id)
         new_owner = User.find(owner_id)
         self.user = new_owner
         self.save
