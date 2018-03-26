@@ -9,7 +9,7 @@ class PuzzlesController < ApplicationController
     def create
         @puzzle = Puzzle.new(puzzle_params)
         if @puzzle && @puzzle.save
-            redirect_to puzzle_path(@puzzle), flash: {message: "#{@puzzle.name} has been created."}
+            raise "do something here?".inspect
         else
             raise "Add error handling here!".inspect
         end
@@ -39,6 +39,6 @@ class PuzzlesController < ApplicationController
     end
 
     def puzzle_params
-        params.require(:puzzle).permit(:id, :name, tag_ids: [], tags_attributes: [:name], reviews_attributes: [:user_id, :rating, :comment])
+        params.require(:puzzle).permit(:id, :name, :pieces, :missing_pieces, tag_ids: [], tags_attributes: [:name], reviews_attributes: [:user_id, :rating, :comment], :previous_owners)
     end
 end
