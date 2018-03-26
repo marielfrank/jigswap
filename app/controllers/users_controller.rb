@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    # before_action :set_user, only: [:show, :update, :destroy]
+    before_action :set_user, only: [:show, :update, :destroy]
 
     def index
         @users = User.all
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
     def update
         if @user.update(user_params)
-            format.json { render json: @user }
+            render json: @user
         else
             raise "Add error handling here!".inspect
         end
