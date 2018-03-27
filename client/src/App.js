@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {fetchPuzzles} from './actions/puzzleActions'
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  componentDidMount() {
+    this.props.fetchPuzzles();
+  }
+
   render() {
     return (
       <div className="App">
@@ -10,12 +16,17 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+          {console.log(this.props.puzzleState)}
+          {this.props.puzzleState.puzzles.map(puz => <div key={puz.id}><h3>{puz.name}</h3><p>{puz.pieces}</p></div>)}
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    puzzleState: state.puzzles
+  }
+}
+
+export default App = connect(mapStateToProps, {fetchPuzzles})(App);
