@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {fetchPuzzles} from '../actions/puzzleActions';
-import {createUser} from '../actions/userActions';
+import {signup} from '../actions/authActions';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import logo from '../logo.svg';
@@ -23,17 +23,16 @@ class App extends Component {
   }
 
   handleOnChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
+    const {name, value} = e.target;
     this.setState({
       [name]: value
     });
   }
 
-  handleOnSubmit = (e) => {
+  handleOnSignup = (e) => {
     e.preventDefault();
     console.log(e)
-    // this.props.createUser(this.state);
+    this.props.signup(this.state);
   }
 
   render() {
@@ -48,7 +47,7 @@ class App extends Component {
           {this.props.puzzleState.puzzles.map(puz => 
             <div key={puz.id}><h3>{puz.name}</h3><p>{puz.pieces}</p></div>
           )}
-          <form onSubmit={this.handleOnSubmit}>
+          <form onSubmit={this.handleOnSignup}>
             <label htmlFor="email">Username: </label>
             <br />
             <input
@@ -98,4 +97,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default App = connect(mapStateToProps, {fetchPuzzles, createUser})(App);
+export default App = connect(mapStateToProps, {fetchPuzzles, signup})(App);

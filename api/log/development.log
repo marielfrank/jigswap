@@ -985,3 +985,101 @@ Processing by PuzzlesController#index as JSON
 Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 12:51:36 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (1.0ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 13:08:32 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 13:08:49 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 13:08:56 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.2ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 15:13:14 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (3.2ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 15:13:44 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 15:17:41 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 15:17:57 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 15:18:21 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (1.0ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 15:18:33 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 15:19:06 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.6ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 15:25:27 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2018-03-29 15:26:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users.json"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
