@@ -23,13 +23,13 @@ const authFailure = (errors) => {
 }
 
 export const signup = (user) => {
-
+    console.log(user)
     return dispatch => {
         dispatch(authRequest())
         
-        return fetch('https://localhost:3001/users', {
+        return fetch('http://localhost:3001/users', {
             method: 'post',
-            body: JSON.stringify(user),
+            body: JSON.stringify({user: user}),
             headers: {
                 "Accept":"application/json",
                 "Content-Type":"application/json"

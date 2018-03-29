@@ -1,12 +1,12 @@
 class User < ApplicationRecord
     validates :username, presence: true
-    validates :email, presence: true, uniqueness: true
+    validates :email, presence: true#, uniqueness: true
     # use bcrypt for password security
     has_secure_password
 
     has_many :puzzles
     has_many :reviews
-    belongs_to :location
+    # belongs_to :location
 
     # authentication/authorization methods
     def admin?
