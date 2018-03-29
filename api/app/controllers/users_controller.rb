@@ -17,7 +17,7 @@ class UsersController < ApplicationController
             token = Knock::AuthToken.new(payload: { sub: user.id })
             render json: token, status: 200
         else
-            raise "Add error handling here!".inspect
+            render json: {errors: "We're having issues creating your account..."}
         end
     end
 

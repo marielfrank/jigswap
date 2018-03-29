@@ -23,6 +23,30 @@ class App extends Component {
           {this.props.puzzleState.puzzles.map(puz => 
             <div key={puz.id}><h3>{puz.name}</h3><p>{puz.pieces}</p></div>
           )}
+          <form>
+            <label htmlFor="email">Email: </label>
+            <br />
+            <input
+              name="email"
+              id="email"
+              type="email"
+            />
+            <br /><br />
+            <label htmlFor="password">Password:</label>
+            <br />
+            <input
+              name="password"
+              id="password"
+              type="password"
+            />
+          </form>
+          <br />
+          <button
+            onClick={this.login}
+          >
+              Login
+          </button>
+        <br />
 
         <Footer/>
       </div>
