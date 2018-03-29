@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :authenticate_user
     before_action :set_user, only: [:show, :update, :destroy]
 
     def index
@@ -11,9 +12,10 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(user_params)
-        if @user && @user.save
-            log_user_in
+        user = User.new(user_params)
+        if user.valid? && user.save
+            token = Knock::AuthToken.new(payload: { sub: user.id })
+            render json: token, status: 200
         else
             raise "Add error handling here!".inspect
         end
@@ -21,7 +23,8 @@ class UsersController < ApplicationController
 
     def update
         if @user.update(user_params)
-            render json: @user
+            token = Knock::AuthToken.new(payload: { sub: user.id })
+            render json: token, status: 200
         else
             raise "Add error handling here!".inspect
         end
