@@ -1,6 +1,8 @@
 import fetch from 'isomorphic-fetch';
 // import { reset, SubmissionError } from 'redux-form';
 
+const API_URL = "http://localhost:3001"
+
 const authRequest = () => {
     return {
         type: 'AUTHENTICATION_REQUEST'
@@ -27,7 +29,7 @@ export const signup = (user) => {
     return dispatch => {
         dispatch(authRequest())
         
-        return fetch('http://localhost:3001/users', {
+        return fetch(`${API_URL}/users`, {
             method: 'post',
             body: JSON.stringify({user: user}),
             headers: {
@@ -38,7 +40,6 @@ export const signup = (user) => {
             .then(resp => resp.json())
             .then(jresp => {
                 debugger
-                console.log(jresp)
                 const { user, jwt } = jresp
                 localStorage.setItem('token', jwt)
                 dispatch(authSuccess(user, jwt))
@@ -60,7 +61,7 @@ export const login = (user) => {
     return dispatch => {
         dispatch(authRequest());
 
-        return fetch("https://mondex-api.herokuapp.com/login", {
+        return fetch(`${API_URL}/login`, {
             method: 'post',
             body: body,
             headers: {
@@ -94,7 +95,7 @@ export const authenticate = (token) => {
             'Authorization': `Bearer: ${token}`
         }
 
-        return fetch('https://mondex-api.herokuapp.com/auth/refresh', {
+        return fetch(`${API_URL}/user_token`, {
             method: 'post',
             headers: headers,
             body: JSON.stringify({})

@@ -1567,3 +1567,87 @@ Processing by UsersController#create as JSON
 Completed 200 OK in 328ms (Views: 20.3ms | ActiveRecord: 11.1ms)
 
 
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 19:18:02 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (4.9ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 275ms (Views: 159.2ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-29 19:18:17 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"test", "email"=>"testingmore@eyw.csdijo", "password"=>"[FILTERED]"}}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test"], ["password_digest", "$2a$10$NhE659FvmAJIQ8gX20xTQ.9Z41cO4XyumPfAJ/PywSTmRHNYM6jgK"], ["email", "testingmore@eyw.csdijo"], ["created_at", "2018-03-29 23:18:17.406323"], ["updated_at", "2018-03-29 23:18:17.406323"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 299ms (Views: 5.3ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 19:19:20 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (5.0ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 105ms (Views: 89.1ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-29 19:20:04 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"adfkhsk", "email"=>"akdfjhslkjh@sfjhlk.vdfiov", "password"=>"[FILTERED]"}}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "adfkhsk"], ["password_digest", "$2a$10$NpLd6RA0r/pVjhDer2Nl6OBqrEBQ0tbYp0PsdwcVIyAqnic5niTd2"], ["email", "akdfjhslkjh@sfjhlk.vdfiov"], ["created_at", "2018-03-29 23:20:04.567008"], ["updated_at", "2018-03-29 23:20:04.567008"]]
+  [1m[35m (10.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 151ms (Views: 5.8ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 19:21:09 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (1.9ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 316ms (Views: 192.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-29 19:21:18 -0400
+  
+SyntaxError (/home/mariel/Flatiron School/jigswap/api/app/controllers/users_controller.rb:19: syntax error, unexpected ',', expecting =>
+            render json: user, token, status: 200
+                                     ^):
+  
+app/controllers/users_controller.rb:19: syntax error, unexpected ',', expecting =>
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 19:23:21 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (2.0ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 315ms (Views: 179.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-29 19:23:32 -0400
+  
+SyntaxError (/home/mariel/Flatiron School/jigswap/api/app/controllers/users_controller.rb:19: syntax error, unexpected ',', expecting =>
+            render json: {user, token}, status: 200
+                               ^):
+  
+app/controllers/users_controller.rb:19: syntax error, unexpected ',', expecting =>
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 19:45:17 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (4.7ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 317ms (Views: 189.8ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-29 19:45:25 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"flsijh", "email"=>"sdjdh@adjfksh.skj", "password"=>"[FILTERED]"}}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "flsijh"], ["password_digest", "$2a$10$r5MQ1Ap9etyzC8Gr9MvEkOKXiOAt0hTfh/fVDFQSb8rjsLgyJR5iy"], ["email", "sdjdh@adjfksh.skj"], ["created_at", "2018-03-29 23:45:26.340407"], ["updated_at", "2018-03-29 23:45:26.340407"]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 352ms (Views: 19.0ms | ActiveRecord: 30.8ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-03-29 19:48:20 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (1.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 320ms (Views: 195.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-03-29 19:48:30 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"adfak", "email"=>"kdfjsh@kjfdh.cdkhj", "password"=>"[FILTERED]"}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.0ms)
+
+
