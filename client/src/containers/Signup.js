@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {signup} from '../actions/authActions';
+import { signup } from '../actions/authActions';
 
-class UserForm extends React.Component {
+class Signup extends React.Component {
     constructor(props){
       super(props);
   
@@ -67,4 +67,4 @@ class UserForm extends React.Component {
     }
 }
 
-export default UserForm = connect(null, {signup})(UserForm);
+export default Signup = connect(null, {signup})(Signup);

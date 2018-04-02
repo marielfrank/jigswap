@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {fetchPuzzles} from '../actions/puzzleActions';
 import Navigation from '../components/Navigation';
-import UserForm from './UserForm'
+import Signup from './Signup';
+import Login from './Login';
 import Footer from '../components/Footer';
 import '../App.css';
 
@@ -22,7 +23,8 @@ class App extends Component {
           {this.props.puzzleState.puzzles.map(puz => 
             <div key={puz.id}><h3>{puz.name}</h3><p>{puz.pieces}</p></div>
           )}
-        <UserForm/>
+        <Signup/>
+        <Login/>
         <br />
 
         <Footer/>

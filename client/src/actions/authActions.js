@@ -25,7 +25,7 @@ const authFailure = (errors) => {
 }
 
 export const signup = (user) => {
-    const new_user = user
+    const newUser = user
     return dispatch => {
         dispatch(authRequest())
         
@@ -39,41 +39,29 @@ export const signup = (user) => {
         })
             .then(resp => resp.json())
             .then(jresp => {
-                debugger
-                authenticate({email: new_user.email, password: new_user.password});
-                // const { user, jwt } = jresp
-                // localStorage.setItem('token', jwt)
-                // dispatch(authSuccess(user, jwt))
-                // dispatch(reset('signup'))
-                // router.history.replace('/')
+                authenticate({email: newUser.email, password: newUser.password});
             })
             .catch((errors) => {
                 console.log(errors)
                 dispatch(authFailure(errors))
-                // throw new SubmissionError(errors)
             })
     }
 }
 
 export const authenticate = (credentials) => {
     return dispatch => {
-        // dispatch(authRequest())
-
-        const headers = {
-            'Content-Type': 'application/json',
-        }
+        dispatch(authRequest())
 
         return fetch(`${API_URL}/user_token`, {
             method: 'post',
-            headers: headers,
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({auth: credentials})
         })
             .then(res => res.json())
             .then((response) => {
-                // debugger
-                const { user, token } = response
-                localStorage.setItem('token', token)
-                dispatch(authSuccess(user, token))
+                const token = response.token;
+                localStorage.setItem('token', token);
+                // dispatch(authSuccess(user, token))
             })
             .catch((errors) => {
                 console.log(errors);
