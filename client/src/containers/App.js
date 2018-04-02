@@ -4,7 +4,6 @@ import {fetchPuzzles} from '../actions/puzzleActions';
 import {signup} from '../actions/authActions';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import logo from '../logo.svg';
 import '../App.css';
 
 class App extends Component {
@@ -40,7 +39,6 @@ class App extends Component {
       <div className="App">
         <Navigation/>
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Jigswap</h1>
           <h2>Because puzzles are for sharing</h2>
         </header>

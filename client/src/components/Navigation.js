@@ -1,17 +1,21 @@
 import React from 'react';
+import logo from '../logo.svg';
 
 const Navigation = () => (
     <nav id="nav">
-        <a class="toggle close" href="#">×</a>
+        <div id="logo">
+            <img src={logo} className="App-logo" alt="logo" />
+        </div>
+        <button className="toggle close">×</button>
         <ul>
             <li>
-                <a href="#">Item 1</a>
+                <a href="/account">Account</a>
             </li>
             <li>
-                <a href="#">Item 2</a>
+                <a href="/puzzles/new">Add Puzzle</a>
             </li>
             <li>
-                <a href="#">Item 3</a>
+                <a href="/logout">Logout</a>
             </li>
         </ul>
     </nav>
