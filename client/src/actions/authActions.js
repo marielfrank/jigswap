@@ -1,5 +1,4 @@
 import fetch from 'isomorphic-fetch';
-// import { reset, SubmissionError } from 'redux-form';
 
 const API_URL = "http://localhost:3001"
 
@@ -27,7 +26,7 @@ const authFailure = (errors) => {
 export const signup = (user) => {
     const newUser = user
     return dispatch => {
-        dispatch(authRequest())
+        // dispatch(authRequest())
         
         return fetch(`${API_URL}/users`, {
             method: 'post',
@@ -61,8 +60,9 @@ export const authenticate = (credentials) => {
             .then((response) => {
                 const token = response.token;
                 localStorage.setItem('token', token);
-                // dispatch(authSuccess(user, token))
+                const user = getUser(credentials)
             })
+            .then((user, token) => dispatch(authSuccess(user, token)))
             .catch((errors) => {
                 console.log(errors);
                 dispatch(authFailure(errors))
@@ -71,3 +71,20 @@ export const authenticate = (credentials) => {
     }
 }
 
+const getUser = (credentials) => { 
+    const request = new Request('http://localhost:3001/find_user', {
+      method: "POST",
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.token}`,
+      }),
+      body: JSON.stringify({user: credentials})
+    })
+    
+    return fetch(request).then(response => {
+        console.log(response.json())
+        return response.json();
+    }).catch(error => {
+        return error;
+    });
+}
