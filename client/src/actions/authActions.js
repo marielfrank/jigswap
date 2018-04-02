@@ -58,11 +58,13 @@ export const authenticate = (credentials) => {
         })
             .then(res => res.json())
             .then((response) => {
-                const token = response.token;
+                const token = response.jwt;
                 localStorage.setItem('token', token);
-                const user = getUser(credentials)
+                return getUser(credentials)
             })
-            .then((user, token) => dispatch(authSuccess(user, token)))
+            .then((user) => {
+                dispatch(authSuccess(user, localStorage.token))
+            })
             .catch((errors) => {
                 console.log(errors);
                 dispatch(authFailure(errors))
@@ -81,10 +83,10 @@ const getUser = (credentials) => {
       body: JSON.stringify({user: credentials})
     })
     
-    return fetch(request).then(response => {
-        console.log(response.json())
-        return response.json();
-    }).catch(error => {
-        return error;
-    });
+    return fetch(request)
+        .then(response => response.json())
+        .then(userJson => {return userJson})
+        .catch(error => {
+            return error;
+        });
 }
