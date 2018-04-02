@@ -1700,3 +1700,383 @@ Processing by PuzzlesController#index as JSON
 Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-02 10:31:34 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.7ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 30ms (Views: 17.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-02 10:33:46 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"efjag", "email"=>"sdaldh@sdjh.dsv", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "efjag"], ["password_digest", "$2a$10$MPl5KKVz0WxcUELmNPrO4u6AuPSCi2foUN1281K0aDNqU98yH0c2e"], ["email", "sdaldh@sdjh.dsv"], ["created_at", "2018-04-02 14:33:46.105619"], ["updated_at", "2018-04-02 14:33:46.105619"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 101ms (Views: 0.6ms | ActiveRecord: 15.2ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-04-02 10:45:51 -0400
+Processing by UserTokenController#create as JSON
+  Parameters: {"user_token"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: auth):
+  
+actionpack (5.1.5) lib/action_controller/metal/strong_parameters.rb:437:in `require'
+knock (2.1.1) app/controllers/knock/auth_token_controller.rb:44:in `auth_params'
+knock (2.1.1) app/controllers/knock/auth_token_controller.rb:31:in `entity'
+knock (2.1.1) app/controllers/knock/auth_token_controller.rb:13:in `authenticate'
+activesupport (5.1.5) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.5) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.5) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.5) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.5) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.5) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.5) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/user_token" for 127.0.0.1 at 2018-04-02 10:49:53 -0400
+Processing by UserTokenController#create as JSON
+  Parameters: {"user_token"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: auth):
+  
+actionpack (5.1.5) lib/action_controller/metal/strong_parameters.rb:437:in `require'
+knock (2.1.1) app/controllers/knock/auth_token_controller.rb:44:in `auth_params'
+knock (2.1.1) app/controllers/knock/auth_token_controller.rb:31:in `entity'
+knock (2.1.1) app/controllers/knock/auth_token_controller.rb:13:in `authenticate'
+activesupport (5.1.5) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.5) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.5) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.5) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.5) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.5) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.5) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/user_token" for 127.0.0.1 at 2018-04-02 10:50:57 -0400
+Processing by UserTokenController#create as JSON
+  Parameters: {"auth"=>{"id"=>9, "username"=>"efjag", "password_digest"=>"[FILTERED]", "email"=>"sdaldh@sdjh.dsv", "created_at"=>"2018-04-02T14:33:46.105Z", "updated_at"=>"2018-04-02T14:33:46.105Z", "location_id"=>nil, "admin"=>false}, "user_token"=>{"auth"=>{"id"=>9, "username"=>"efjag", "password_digest"=>"[FILTERED]", "email"=>"sdaldh@sdjh.dsv", "created_at"=>"2018-04-02T14:33:46.105Z", "updated_at"=>"2018-04-02T14:33:46.105Z", "location_id"=>nil, "admin"=>false}}}
+Unpermitted parameters: :id, :username, :password_digest, :created_at, :updated_at, :location_id, :admin
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sdaldh@sdjh.dsv"], ["LIMIT", 1]]
+Unpermitted parameters: :id, :username, :password_digest, :created_at, :updated_at, :location_id, :admin
+Completed 404 Not Found in 76ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-02 11:25:36 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.8ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-02 11:26:33 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.9ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-02 11:26:39 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-02 11:26:48 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"fsdkjh", "email"=>"ksjdh@ksdjh.sdh", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "fsdkjh"], ["password_digest", "$2a$10$PDTJz5W/I/.L5lp4qb2f4OFLLw6hmQGDO9XMbYRJ4APutufpxcza."], ["email", "ksjdh@ksdjh.sdh"], ["created_at", "2018-04-02 15:26:48.597042"], ["updated_at", "2018-04-02 15:26:48.597042"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 75ms (Views: 0.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-02 11:45:29 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.5ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-02 11:45:43 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"efky", "email"=>"soiufid@lisf.dsvhl", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "efky"], ["password_digest", "$2a$10$Z2qp2mf.aFtDa2eyBDsAfO5p5H9nl8Eb3ujuPRzoZYB4HqR8e5Npu"], ["email", "soiufid@lisf.dsvhl"], ["created_at", "2018-04-02 15:45:43.189773"], ["updated_at", "2018-04-02 15:45:43.189773"]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 74ms (Views: 0.5ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-02 11:47:08 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"efky", "email"=>"soiufid@lisf.dsvhl", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "efky"], ["password_digest", "$2a$10$8X8ju9piNIdXGSQEDuDSZOfUm3gEphxI/nJhn7TLiw.mTSkVjMicK"], ["email", "soiufid@lisf.dsvhl"], ["created_at", "2018-04-02 15:47:08.963079"], ["updated_at", "2018-04-02 15:47:08.963079"]]
+  [1m[35m (9.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 79ms (Views: 0.5ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-02 11:47:27 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-02 11:47:50 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-02 11:48:52 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"FAIO", "email"=>"skjdhag@shfv.vkj", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "FAIO"], ["password_digest", "$2a$10$rOEYEcbOpN/QhyumuvxfLuteZRbOY/Hte4ScaE9wzc6CLaYOMh2jW"], ["email", "skjdhag@shfv.vkj"], ["created_at", "2018-04-02 15:48:52.569906"], ["updated_at", "2018-04-02 15:48:52.569906"]]
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 73ms (Views: 0.6ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-02 11:49:25 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.5ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-02 11:49:27 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-02 11:49:38 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"dkgshj", "email"=>"kjlhal@kjhsdgd.fsd", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "dkgshj"], ["password_digest", "$2a$10$OpgW4O4WRW9RI8Xwh6XyVeVl4vAxIPU08LhjmPYL1Dn.HsYGrfZxC"], ["email", "kjlhal@kjhsdgd.fsd"], ["created_at", "2018-04-02 15:49:38.587424"], ["updated_at", "2018-04-02 15:49:38.587424"]]
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 73ms (Views: 0.5ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-02 11:50:09 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-02 11:50:15 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-02 11:50:57 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"fa.sd", "email"=>"fdsjh@hjskhgl.vsjf", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "fa.sd"], ["password_digest", "$2a$10$UIHguacKhVHxm3ngrS8tq.krBZ0j40.8FZ/LUfRNEuEolohfofwZ6"], ["email", "fdsjh@hjskhgl.vsjf"], ["created_at", "2018-04-02 15:50:57.573011"], ["updated_at", "2018-04-02 15:50:57.573011"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 75ms (Views: 0.6ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-02 12:21:12 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/mariel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.1.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/mariel/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.1.5/lib/rails/templates/rails/welcome/index.html.erb (4.2ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-04-02 12:21:12 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-04-02 12:21:12 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2018-04-02 12:21:17 -0400
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2018-04-02 12:21:26 -0400
+Processing by UsersController#index as JSON
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2018-04-02 12:21:29 -0400
+Processing by UsersController#index as JSON
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2018-04-02 12:21:59 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 24ms (Views: 15.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-02 12:25:19 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 33ms (Views: 17.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-02 12:36:01 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 18ms (Views: 11.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-02 12:36:23 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.7ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.7ms)
+
+

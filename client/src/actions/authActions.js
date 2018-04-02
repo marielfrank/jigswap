@@ -25,7 +25,7 @@ const authFailure = (errors) => {
 }
 
 export const signup = (user) => {
-    console.log(user)
+    const new_user = user
     return dispatch => {
         dispatch(authRequest())
         
@@ -40,9 +40,10 @@ export const signup = (user) => {
             .then(resp => resp.json())
             .then(jresp => {
                 debugger
-                const { user, jwt } = jresp
-                localStorage.setItem('token', jwt)
-                dispatch(authSuccess(user, jwt))
+                authenticate({email: new_user.email, password: new_user.password});
+                // const { user, jwt } = jresp
+                // localStorage.setItem('token', jwt)
+                // dispatch(authSuccess(user, jwt))
                 // dispatch(reset('signup'))
                 // router.history.replace('/')
             })
@@ -54,54 +55,22 @@ export const signup = (user) => {
     }
 }
 
-export const login = (user) => {
-
-    const body = JSON.stringify(user)
-
+export const authenticate = (credentials) => {
     return dispatch => {
-        dispatch(authRequest());
-
-        return fetch(`${API_URL}/login`, {
-            method: 'post',
-            body: body,
-            headers: {
-                "Accept":"application/json",
-                "Content-Type":"application/json"
-            }
-        })
-            .then((res) => res.json())
-            .then((response) => {
-                const { user, token } = response;
-                localStorage.setItem('token', token);
-                dispatch(authSuccess(user, token))
-                // dispatch(reset('login'))
-                // router.history.replace('/')
-            })
-            .catch((errors) => {
-                console.log(errors)
-                dispatch(authFailure(errors))
-                // throw new SubmissionError(errors)
-            })
-    }
-}
-
-export const authenticate = (token) => {
-    return dispatch => {
-        dispatch(authRequest())
+        // dispatch(authRequest())
 
         const headers = {
-            'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': `Bearer: ${token}`
         }
 
         return fetch(`${API_URL}/user_token`, {
             method: 'post',
             headers: headers,
-            body: JSON.stringify({})
+            body: JSON.stringify({auth: credentials})
         })
             .then(res => res.json())
             .then((response) => {
+                // debugger
                 const { user, token } = response
                 localStorage.setItem('token', token)
                 dispatch(authSuccess(user, token))
