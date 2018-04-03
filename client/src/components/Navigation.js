@@ -9,6 +9,9 @@ const Navigation = () => (
         <button className="toggle close">×</button>
         <ul>
             <li>
+                <a href="/">Puzzles</a>
+            </li>
+            <li>
                 <a href="/account">Account</a>
             </li>
             <li>
