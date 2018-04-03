@@ -2825,3 +2825,63 @@ Processing by PuzzlesController#index as JSON
 Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-03 16:18:01 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (2.5ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 15ms (Views: 12.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-03 16:19:57 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.5ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-03 16:20:11 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-03 16:22:13 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-03 16:22:36 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (1.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-03 17:19:27 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (3.9ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-03 17:23:57 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.6ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-03 17:24:55 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.5ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-03 17:25:57 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.5ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-03 17:26:02 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+

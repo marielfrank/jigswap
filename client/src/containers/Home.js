@@ -12,7 +12,7 @@ class Home extends Component {
     render() {
         return (
             <div id="home">
-                <PuzzleList puzzles={this.props.puzzleState.puzzles} />
+                <PuzzleList puzzles={this.props.puzzleState.puzzles} match={this.props.match} />
             </div>
         );
     }
