@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../logo.svg';
+import { logout } from '../actions/authActions';
 
 const Navigation = () => (
     <nav id="nav">
@@ -18,7 +19,13 @@ const Navigation = () => (
                 <a href="/puzzles/new">Add Puzzle</a>
             </li>
             <li>
-                <a href="/logout">Logout</a>
+                <button onClick={logout} >Logout</button>
+            </li>
+            <li>
+                <a href='/login' >Log In</a>
+            </li>
+            <li>
+                <a href='/signup' >Sign Up</a>
             </li>
         </ul>
     </nav>
