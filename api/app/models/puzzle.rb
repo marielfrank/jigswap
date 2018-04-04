@@ -6,7 +6,6 @@ class Puzzle < ApplicationRecord
     has_many :puzzle_tags
     has_many :tags, through: :puzzle_tags
     has_many :reviews
-    delegate :location, to: :user 
 
     def change_owner(owner_id)
         prev_owner_id = self.user.id

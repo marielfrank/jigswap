@@ -15,13 +15,6 @@ ActiveRecord::Schema.define(version: 20180323124330) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "locations", force: :cascade do |t|
-    t.string "city"
-    t.string "state"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "puzzle_tags", force: :cascade do |t|
     t.integer "tag_id"
     t.integer "puzzle_id"
@@ -60,7 +53,6 @@ ActiveRecord::Schema.define(version: 20180323124330) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "location_id"
     t.boolean "admin", default: false
   end
 
