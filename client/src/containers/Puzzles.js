@@ -10,14 +10,17 @@ class Puzzles extends Component {
         this.props.fetchPuzzles();
     }
 
-    render () {
-        const puzzleLinks = this.props.puzzleState.puzzles.map(puz => 
-            <Link className="puzzle-list-item" key={puz.id} to={`/puzzles/${puz.id}`}>{puz.name} - {puz.pieces} pieces</Link>
-        )
+    render() {
+        const puzzles = this.props.puzzleState.puzzles
         return (
             <div id="puzzle-list">
                 <Route exact path={`${this.props.match.url}/:puzzleId`} component={Puzzle}/>
-                {puzzleLinks}
+                <Route exact path={this.props.match.url} render={(puzzleLinks) => 
+                    (<div>{puzzles.map(puz => 
+                        <Link className="puzzle-list-item" key={puz.id} to={`/puzzles/${puz.id}`}>{puz.name} - {puz.pieces} pieces</Link>
+                    )}</div>)
+                    } />
+                
             </div>
         )
     }

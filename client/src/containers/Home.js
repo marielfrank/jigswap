@@ -3,7 +3,6 @@ import { Redirect } from 'react-router-dom';
 
 const Home = ({match}) => {
         
-    // const puzzleList = <Puzzles puzzles={this.props.puzzleState.puzzles} match={this.props.match} />
     const welcomeMessage = <h2>Please sign up or log in to start swapping puzzles!</h2>
 
     return (
