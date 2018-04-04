@@ -8,3 +8,7 @@ export function fetchPuzzles() {
         .then(puzzles => dispatch({ type: 'FETCH_PUZZLES', payload: puzzles }));
     }
 }
+
+export function createPuzzle() {
+    return
+}
