@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
     has_many :puzzles
     has_many :reviews
-    # belongs_to :location
 
     # authentication/authorization methods
     def admin?
