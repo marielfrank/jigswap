@@ -1,27 +1,15 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import {fetchPuzzles} from '../actions/puzzleActions';
-import PuzzleList from '../components/PuzzlesList';
+import React from 'react';
+import { Redirect } from 'react-router-dom';
 
-class Home extends Component {
+const Home = ({match}) => {
+        
+    const welcomeMessage = <h2>Please sign up or log in to start swapping puzzles!</h2>
 
-    componentDidMount() {
-        this.props.fetchPuzzles();
-    }
-
-    render() {
-        return (
-            <div id="home">
-                <PuzzleList puzzles={this.props.puzzleState.puzzles} match={this.props.match} />
-            </div>
-        );
-    }
-}
-      
-const mapStateToProps = (state) => {
-    return {
-        puzzleState: state.puzzles
-    }
+    return (
+        <div id="home">
+            { !!localStorage.token ? <Redirect to="/puzzles" /> : welcomeMessage }
+        </div>
+    );
 }
 
-export default Home = connect(mapStateToProps, {fetchPuzzles})(Home);
+export default Home;

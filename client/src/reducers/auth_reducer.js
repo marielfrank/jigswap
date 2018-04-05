@@ -34,7 +34,13 @@ export default (state = initialState, action) => {
             }
 
         case 'LOGOUT':
-            return Object.assign({}, initialState, {isAuthenticating: false});
+            console.log("got to logout reducer")
+            return {...state, 
+                isAuthenticated: false,
+                isAuthenticating: false,
+                currentUser: {},
+                token: null
+            };
 
         default:
             return state;
