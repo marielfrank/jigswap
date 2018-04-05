@@ -11,14 +11,14 @@ import Footer from '../components/Footer';
 import '../App.css';
 
 class App extends Component {
-
+  
   render() {
     return (
       <Router>
         <div className="App">
           <Navigation/>
           <header className="App-header">
-            <h1 className="App-title">Jigswap</h1>
+            <h1>Jigswap</h1>
           </header>
 
           <Route exact path="/" component={Home} />
