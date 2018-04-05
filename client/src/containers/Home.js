@@ -7,7 +7,7 @@ const Home = ({match}) => {
 
     return (
         <div id="home">
-            { !!localStorage.token ? <Redirect to={ {from: { pathname: "/puzzles"}} } /> : welcomeMessage }
+            { !!localStorage.token ? <Redirect to="/puzzles" /> : welcomeMessage }
         </div>
     );
 }
