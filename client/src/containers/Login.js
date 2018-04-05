@@ -29,7 +29,7 @@ class Login extends React.Component {
     }
 
     render() {
-        if (this.state.redirect || !localStorage.token) {
+        if (this.state.redirect || !!localStorage.token) {
             return <Redirect to="/puzzles"/>
         } else {
             return (

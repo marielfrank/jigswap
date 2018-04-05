@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from '../logo.svg';
 import { logout } from '../actions/authActions';
 
-class Navigation extends Component {
+export default class Navigation extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -11,14 +11,21 @@ class Navigation extends Component {
         }
     }
     render () {
-        const navButtons = () => (
+        const handleLogout = () => {
+            logout();
+            // this.setState({
+            //     redirect: true
+            // })
+        }
+
+        const navButtons = (
             localStorage.token ? (
                 <div>
                     <p>
-                        <a href="/account">Account</a>
+                        <Link to="/account">Account</Link>
                     </p>
                     <p>
-                        <a href="/puzzles/new">Add Puzzle</a>
+                        <Link to="/puzzles/new">Add Puzzle</Link>
                     </p>
                     <p>
                         <button onClick={handleLogout} >Log Out</button>
@@ -27,24 +34,18 @@ class Navigation extends Component {
             ) : (
                 <div>
                     <p>
-                        <a href='/login' >Log In</a>
+                        <Link to='/login' >Log In</Link>
                     </p>
                     <p>
-                        <a href='/signup' >Sign Up</a>
+                        <Link to='/signup' >Sign Up</Link>
                     </p>
                 </div>
             )
         );
 
-        const handleLogout = () => {
-            logout();
-            this.setState({
-                redirect: true
-            })
-        }
-        if (!!this.state.redirect) {
-            return <Redirect to='/' />
-        } else {
+        // if (!!this.state.redirect) {
+        //     return <Redirect to='/login' />
+        // } else {
             return (
                 <nav id="nav">
                     <div id="logo">
@@ -52,12 +53,11 @@ class Navigation extends Component {
                     </div>
                     <button className="toggle close">×</button>
                     <p>
-                        <a href="/">Puzzles</a>
+                        <Link to="/">Puzzles</Link>
                     </p>
                     {navButtons}
                 </nav>
             )
-        }
+        // }
     }
 }
-export default Navigation;
