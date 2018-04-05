@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from "react-router-dom";
-import logo from '../logo.svg';
+import logo from '../logo.png';
 import { logout } from '../actions/authActions';
 
 export default class Navigation extends Component {
@@ -11,6 +11,7 @@ export default class Navigation extends Component {
         }
     }
     render () {
+        const NavItem = ReactBootstrap.NavItem;
         const handleLogout = () => {
             logout();
             // this.setState({
@@ -21,24 +22,24 @@ export default class Navigation extends Component {
         const navButtons = (
             localStorage.token ? (
                 <div>
-                    <p>
+                    <NavItem eventKey={4} title="Account">
                         <Link to="/account">Account</Link>
-                    </p>
-                    <p>
+                    </NavItem>
+                    <NavItem eventKey={5} title="Add Puzzle">
                         <Link to="/puzzles/new">Add Puzzle</Link>
-                    </p>
-                    <p>
+                    </NavItem>
+                    <NavItem eventKey={6} title="Account">
                         <button onClick={handleLogout} >Log Out</button>
-                    </p>
+                    </NavItem>
                 </div>
             ) : (
                 <div>
-                    <p>
+                    <NavItem eventKey={2} title="Log In">
                         <Link to='/login' >Log In</Link>
-                    </p>
-                    <p>
+                    </NavItem>
+                    <NavItem eventKey={3} title="Sign Up">
                         <Link to='/signup' >Sign Up</Link>
-                    </p>
+                    </NavItem>
                 </div>
             )
         );
@@ -47,16 +48,16 @@ export default class Navigation extends Component {
         //     return <Redirect to='/login' />
         // } else {
             return (
-                <nav id="nav">
-                    <div id="logo">
-                        <img src={logo} className="App-logo" alt="logo" />
-                    </div>
-                    <button className="toggle close">×</button>
-                    <p>
-                        <Link to="/">Puzzles</Link>
-                    </p>
+                <Nav bsStyle="pills" activeKey={1} onSelect={handleSelect}>
+                    <NavItem eventKey={1}>
+                        <Link to="/">
+                            <div id="logo">
+                                <img src={logo} className="App-logo" alt="logo" />
+                            </div>
+                        </Link>
+                    </NavItem>
                     {navButtons}
-                </nav>
+                </Nav>
             )
         // }
     }
