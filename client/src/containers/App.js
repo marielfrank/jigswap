@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux'
 import Navigation from '../components/Navigation';
-import Home from './Home';
+import Welcome from './Welcome';
 import Signup from './Signup';
 import Login from './Login';
 import PuzzleForm from './PuzzleForm';
@@ -23,12 +23,12 @@ class App extends Component {
             <h1>Jigswap</h1>
           </header>
           <div id="main-div">
-            <Route exact path="/" component={Home} />
-            <Route path="/signup" component={Signup} />
-            <Route path="/login" component={Login} />
-            <Route path="/account" component={User} />
-            <Route exact path="/puzzles/new" component={PuzzleForm} />
-            <Route path="/puzzles" component={Puzzles} />
+            <Route exact path="/" component={Welcome} isAuthenticated={isAuthenticated} />
+            <Route path="/signup" component={Signup} isAuthenticated={isAuthenticated} />
+            <Route path="/login" component={Login} isAuthenticated={isAuthenticated} />
+            <Route path="/account" component={User} isAuthenticated={isAuthenticated} />
+            <Route exact path="/puzzles/new" component={PuzzleForm} isAuthenticated={isAuthenticated} />
+            <Route path="/puzzles" component={Puzzles} isAuthenticated={isAuthenticated} />
           <br />
           </div>
 

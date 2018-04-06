@@ -21,7 +21,7 @@ class Login extends React.Component {
         });
     }
 
-    handleOnSignup = (e) => {
+    handleOnLogin = (e) => {
         e.preventDefault();
         if (this.props.authenticate({email: this.state.email, password: this.state.password})) {
             this.setState({redirect: true})
@@ -29,13 +29,13 @@ class Login extends React.Component {
     }
 
     render() {
-        if (this.state.redirect || !!localStorage.token) {
+        if (this.state.redirect || this.props.isAuthenticated) {
             return <Redirect to="/puzzles"/>
         } else {
             return (
                 <div id="login">
                     <h2>Log In</h2>
-                    <form onSubmit={this.handleOnSignup}>
+                    <form onSubmit={this.handleOnLogin}>
                         <label htmlFor="email">Email: </label>
                         <br />
                         <input
