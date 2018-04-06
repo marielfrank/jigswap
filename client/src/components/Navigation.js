@@ -1,44 +1,34 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import { Link } from "react-router-dom";
 import logo from '../logo.png';
 import { logout } from '../actions/authActions';
 
-export default class Navigation extends Component {
+class Navigation extends Component {
     constructor(props) {
         super(props);
         this.state = {
             redirect: false
         }
     }
+    handleLogout = () => {
+        this.props.logout();
+        // this.setState({
+        //     redirect: true
+        // })
+    }
     render () {
-        const handleLogout = () => {
-            logout();
-            // this.setState({
-            //     redirect: true
-            // })
-        }
-
         const navButtons = (
             localStorage.token ? (
                 <div>
-                    {/* <NavItem eventKey={4} title="Account"> */}
-                        <Link to="/account">Account</Link>
-                    {/* </NavItem> */}
-                    {/* <NavItem eventKey={5} title="Add Puzzle"> */}
-                        <Link to="/puzzles/new">Add Puzzle</Link>
-                    {/* </NavItem> */}
-                    {/* <NavItem eventKey={6} title="Account"> */}
-                        <button onClick={handleLogout} >Log Out</button>
-                    {/* </NavItem> */}
+                    <Link to="/account">Account</Link>
+                    <Link to="/puzzles/new">Add Puzzle</Link>
+                    <button onClick={this.handleLogout} >Log Out</button>
                 </div>
             ) : (
                 <div>
-                    {/* <NavItem eventKey={2} title="Log In"> */}
-                        <Link to='/login' >Log In</Link>
-                    {/* </NavItem> */}
-                    {/* <NavItem eventKey={3} title="Sign Up"> */}
-                        <Link to='/signup' >Sign Up</Link>
-                    {/* </NavItem> */}
+                    <Link to='/login' >Log In</Link>
+                    <Link to='/signup' >Sign Up</Link>
                 </div>
             )
         );
@@ -48,16 +38,16 @@ export default class Navigation extends Component {
         // } else {
             return (
                 <nav>
-                    {/* <NavItem eventKey={1}> */}
-                        <Link to="/">
-                            <div id="logo">
-                                <img src={logo} className="App-logo" alt="logo" />
-                            </div>
-                        </Link>
-                    {/* </NavItem> */}
+                    <Link to="/">
+                        <div id="logo">
+                            <img src={logo} className="App-logo" alt="logo" />
+                        </div>
+                    </Link>
                     {navButtons}
                 </nav>
             )
         // }
     }
 }
+
+export default Navigation = connect(null, {logout})(Navigation)

@@ -12,3 +12,9 @@ export function fetchPuzzles() {
 export function createPuzzle() {
     return
 }
+
+export function getPuzzle(id) {
+    return dispatch => {
+        dispatch({type: 'GET_PUZZLE', payload: id})
+    }
+}

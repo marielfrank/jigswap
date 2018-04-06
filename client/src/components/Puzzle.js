@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Puzzle = () => (
-    <div>This is a puzzle</div>
+const Puzzle = ({match}) => (
+    <div>{console.log("Puzzle component")}</div>
 )
 
 export default Puzzle;

@@ -4679,3 +4679,431 @@ Processing by PuzzlesController#index as JSON
 Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms)
 
 
+Started POST "/user_token" for 127.0.0.1 at 2018-04-05 14:33:44 -0400
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"test2@testing.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"test2@testing.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@testing.com"], ["LIMIT", 1]]
+Completed 201 Created in 71ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 14:33:44 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.6ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/find_user" for 127.0.0.1 at 2018-04-05 14:33:44 -0400
+Processing by UsersController#find as */*
+  Parameters: {"user"=>{"email"=>"test2@testing.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@testing.com"], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 14:36:03 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-04-05 19:04:14 -0400
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"test3@testing.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"test3@testing.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@testing.com"], ["LIMIT", 1]]
+Completed 201 Created in 80ms (Views: 0.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 19:04:14 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (1.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/find_user" for 127.0.0.1 at 2018-04-05 19:04:14 -0400
+Processing by UsersController#find as */*
+  Parameters: {"user"=>{"email"=>"test3@testing.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@testing.com"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 19:04:31 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 19:04:50 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 19:11:56 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 19:20:04 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 19:21:02 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-04-05 19:21:29 -0400
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"test3@testing.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"test3@testing.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@testing.com"], ["LIMIT", 1]]
+Completed 201 Created in 70ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 19:21:29 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/find_user" for 127.0.0.1 at 2018-04-05 19:21:29 -0400
+Processing by UsersController#find as */*
+  Parameters: {"user"=>{"email"=>"test3@testing.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@testing.com"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 19:26:23 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 19:26:35 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 19:27:35 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 19:37:49 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.8ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 19:41:25 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 19:58:16 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.8ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 19:58:48 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 19:58:58 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-05 19:59:55 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"someone", "email"=>"testing8@testing.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "someone"], ["password_digest", "$2a$10$N3e/7eHhWS0GoysjQDag7O12z2GQ6Pr3PuoVbslQILOOUNJk6SEnS"], ["email", "testing8@testing.com"], ["created_at", "2018-04-05 23:59:55.768313"], ["updated_at", "2018-04-05 23:59:55.768313"]]
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 105ms (Views: 0.6ms | ActiveRecord: 12.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-05 20:02:02 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"dsafgkj", "email"=>"skahdfg@djdhgs.sdjhg", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "dsafgkj"], ["password_digest", "$2a$10$GP/7S5jajOB4kkbIYQlDo.3.D.ws4JCn22U0bz94eb5dbXCSb2Sf6"], ["email", "skahdfg@djdhgs.sdjhg"], ["created_at", "2018-04-06 00:02:02.309726"], ["updated_at", "2018-04-06 00:02:02.309726"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 80ms (Views: 1.0ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-05 20:03:28 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"alghlsjl", "email"=>"afjhj@kashjf.sdkhj", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "alghlsjl"], ["password_digest", "$2a$10$8s7O3ohyVTXlXlbMVcpLhuLTukimW7gq4lTECxUdN/HiDfD0Snnxm"], ["email", "afjhj@kashjf.sdkhj"], ["created_at", "2018-04-06 00:03:29.058886"], ["updated_at", "2018-04-06 00:03:29.058886"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 81ms (Views: 0.4ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-05 20:04:16 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"jsdhag", "email"=>"sfhadg@afjh.kdskfh", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "jsdhag"], ["password_digest", "$2a$10$ksBclsUwUYsXKVn8ZmdD5.rSAid/boQ22WyRPdupTBDwFQiMQxwFO"], ["email", "sfhadg@afjh.kdskfh"], ["created_at", "2018-04-06 00:04:16.357215"], ["updated_at", "2018-04-06 00:04:16.357215"]]
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 76ms (Views: 1.0ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-04-05 20:09:14 -0400
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"test1@testing.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"test1@testing.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test1@testing.com"], ["LIMIT", 1]]
+Completed 201 Created in 92ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:09:14 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/find_user" for 127.0.0.1 at 2018-04-05 20:09:14 -0400
+Processing by UsersController#find as */*
+  Parameters: {"user"=>{"email"=>"test1@testing.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test1@testing.com"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:14:30 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:15:02 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-04-05 20:20:09 -0400
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"test2@testing.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"test2@testing.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@testing.com"], ["LIMIT", 1]]
+Completed 201 Created in 83ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:20:09 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/find_user" for 127.0.0.1 at 2018-04-05 20:20:09 -0400
+Processing by UsersController#find as */*
+  Parameters: {"user"=>{"email"=>"test2@testing.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@testing.com"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:23:08 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:23:18 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.5ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:27:23 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:29:07 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.9ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:29:48 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.5ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:30:20 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:30:24 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:31:27 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:32:40 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.5ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:32:46 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.6ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:34:41 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:34:45 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:37:21 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-04-05 20:37:37 -0400
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"test2@testing.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"test2@testing.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@testing.com"], ["LIMIT", 1]]
+Completed 201 Created in 84ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:37:37 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/find_user" for 127.0.0.1 at 2018-04-05 20:37:37 -0400
+Processing by UsersController#find as */*
+  Parameters: {"user"=>{"email"=>"test2@testing.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@testing.com"], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:37:46 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:37:58 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:38:01 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:38:12 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.6ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:38:16 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:38:18 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.5ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:39:56 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:40:53 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:46:05 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.6ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:46:21 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:47:59 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.5ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:48:47 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.5ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:48:56 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.7ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-04-05 20:55:07 -0400
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"test4@testing.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"test4@testing.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test4@testing.com"], ["LIMIT", 1]]
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-05 20:55:07 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.4ms)
+
+
+Completed 201 Created in 108ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/find_user" for 127.0.0.1 at 2018-04-05 20:55:07 -0400
+Processing by UsersController#find as */*
+  Parameters: {"user"=>{"email"=>"test4@testing.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test4@testing.com"], ["LIMIT", 1]]
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.3ms)
+
+
