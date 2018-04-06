@@ -6,6 +6,7 @@
   margin: 20px;
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  display: inline-block
 }
 
 .App-title {
@@ -15,6 +16,15 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+nav {
+  padding: 20px;
+  background: #71adc7;
+}
+
+nav a {
+  color: #fff;
 }
 
 .puzzle-list-item {
