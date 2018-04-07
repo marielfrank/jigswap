@@ -9,7 +9,7 @@ class PuzzlesController < ApplicationController
     def create
         @puzzle = Puzzle.new(puzzle_params)
         if @puzzle && @puzzle.save
-            raise "do something here?".inspect
+            render json: @puzzle
         else
             raise "Add error handling here!".inspect
         end

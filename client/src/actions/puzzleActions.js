@@ -29,8 +29,10 @@ export function createPuzzle(puzzleDeets) {
         })
             .then(resp => resp.json())
             .then(jresp => {
-                console.log(jresp)
-                // dispatch(); do something that switches user to /puzzles
+                dispatch({
+                    type: 'CREATE_PUZZLE',
+                    payload: jresp
+                })
             })
             .catch((errors) => {
                 console.log(errors)

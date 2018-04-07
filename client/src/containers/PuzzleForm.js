@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 import { createPuzzle } from '../actions/puzzleActions';
 
@@ -10,7 +11,7 @@ class PuzzleForm extends React.Component {
         name: '', 
         pieces: 0,
         missing_pieces: 0,
-        user_id: parseInt(props.user_id, 10)
+        user_id: this.props.user_id
       };
     }
 
@@ -24,6 +25,7 @@ class PuzzleForm extends React.Component {
     handleOnCreatePuzzle = (e) => {
         e.preventDefault();
         this.props.createPuzzle(this.state);
+        this.props.history.push('/puzzles')
     }
 
     render() {
@@ -76,4 +78,4 @@ const mapStateToProps = (state) => {
         user_id: state.auth.currentUser.id
     }
 }
-export default PuzzleForm = connect(mapStateToProps, {createPuzzle})(PuzzleForm);
+export default PuzzleForm = withRouter(connect(mapStateToProps, {createPuzzle})(PuzzleForm));
