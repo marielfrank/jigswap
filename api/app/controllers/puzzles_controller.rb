@@ -39,6 +39,6 @@ class PuzzlesController < ApplicationController
     end
 
     def puzzle_params
-        params.require(:puzzle).permit(:id, :name, :pieces, :missing_pieces, :user_id, tag_ids: [], tags_attributes: [:name], reviews_attributes: [:user_id, :rating, :comment], :previous_owners)
+        params.require(:puzzle).permit(:id, :name, :pieces, :missing_pieces, :user_id, reviews_attributes: [:user_id, :rating, :comment] , tags_attributes: [:name])
     end
 end
