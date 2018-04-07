@@ -2,6 +2,15 @@
   text-align: left;
 }
 
+a {
+  color: #2e979e;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .App-logo {
   margin: 20px;
   animation: App-logo-spin infinite 20s linear;

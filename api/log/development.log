@@ -5886,3 +5886,179 @@ Processing by UsersController#find as */*
 Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
 
 
+Started POST "/user_token" for 127.0.0.1 at 2018-04-07 15:36:53 -0400
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"test3@testing.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"test3@testing.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@testing.com"], ["LIMIT", 1]]
+Completed 201 Created in 73ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-07 15:36:54 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/find_user" for 127.0.0.1 at 2018-04-07 15:36:54 -0400
+Processing by UsersController#find as */*
+  Parameters: {"user"=>{"email"=>"test3@testing.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@testing.com"], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-07 15:37:44 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-07 15:55:43 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.8ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+No serializer found for resource: #<Puzzle id: 1, name: "puzzle1", pieces: 200, missing_pieces: 0, user_id: 1, created_at: "2018-04-04 16:37:33", updated_at: "2018-04-04 16:37:33", previous_owners: []>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Puzzle::ActiveRecord_Relation (2.13ms)
+Completed 200 OK in 51ms (Views: 33.7ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2018-04-07 15:57:54 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+No serializer found for resource: #<User id: 1, username: "user1", password_digest: "$2a$10$wGA1bMP8XDD3wpYKoM1b3eiX4WCA8BKh0E36b0EaT3y...", email: "test1@testing.com", created_at: "2018-04-04 16:37:33", updated_at: "2018-04-04 16:37:33", admin: false>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (2.23ms)
+Completed 200 OK in 35ms (Views: 20.2ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2018-04-07 15:58:18 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+No serializer found for resource: #<User id: 1, username: "user1", password_digest: "$2a$10$wGA1bMP8XDD3wpYKoM1b3eiX4WCA8BKh0E36b0EaT3y...", email: "test1@testing.com", created_at: "2018-04-04 16:37:33", updated_at: "2018-04-04 16:37:33", admin: false>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (3.02ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-07 15:58:25 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (1.1ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+No serializer found for resource: #<Puzzle id: 1, name: "puzzle1", pieces: 200, missing_pieces: 0, user_id: 1, created_at: "2018-04-04 16:37:33", updated_at: "2018-04-04 16:37:33", previous_owners: []>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Puzzle::ActiveRecord_Relation (2.01ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/puzzles/2.json" for 127.0.0.1 at 2018-04-07 15:59:54 -0400
+Processing by PuzzlesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT  "puzzles".* FROM "puzzles" WHERE "puzzles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Puzzle (0.57ms)
+Completed 200 OK in 35ms (Views: 7.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/users.json" for 127.0.0.1 at 2018-04-07 16:09:42 -0400
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+No serializer found for resource: #<User id: 1, username: "user1", password_digest: "$2a$10$wGA1bMP8XDD3wpYKoM1b3eiX4WCA8BKh0E36b0EaT3y...", email: "test1@testing.com", created_at: "2018-04-04 16:37:33", updated_at: "2018-04-04 16:37:33", admin: false>
+[active_model_serializers]   [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mPuzzle Load (0.8ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mPuzzle Load (1.6ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mPuzzle Load (0.6ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   [1m[36mPuzzle Load (0.2ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1[0m  [["user_id", 8]]
+[active_model_serializers]   [1m[36mPuzzle Load (0.4ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers]   [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1[0m  [["user_id", 10]]
+[active_model_serializers]   [1m[36mPuzzle Load (0.8ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1[0m  [["user_id", 11]]
+[active_model_serializers]   [1m[36mPuzzle Load (1.0ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles" WHERE "puzzles"."user_id" = $1[0m  [["user_id", 12]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (105.43ms)
+Completed 200 OK in 145ms (Views: 124.6ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-07 16:11:57 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+No serializer found for resource: #<Puzzle id: 1, name: "puzzle1", pieces: 200, missing_pieces: 0, user_id: 1, created_at: "2018-04-04 16:37:33", updated_at: "2018-04-04 16:37:33", previous_owners: []>
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Puzzle::ActiveRecord_Relation (49.24ms)
+Completed 200 OK in 79ms (Views: 68.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-07 16:13:14 -0400
+  
+SyntaxError (/home/mariel/Flatiron School/jigswap/api/app/controllers/puzzles_controller.rb:6: syntax error, unexpected ']', expecting =>
+/home/mariel/Flatiron School/jigswap/api/app/controllers/puzzles_controller.rb:44: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/puzzles_controller.rb:6: syntax error, unexpected ']', expecting =>
+app/controllers/puzzles_controller.rb:44: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-07 16:14:41 -0400
+Processing by PuzzlesController#index as JSON
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `username' for :user:Symbol):
+  
+app/controllers/puzzles_controller.rb:6:in `index'
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-07 16:18:51 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.6ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+No serializer found for resource: #<Puzzle id: 1, name: "puzzle1", pieces: 200, missing_pieces: 0, user_id: 1, created_at: "2018-04-04 16:37:33", updated_at: "2018-04-04 16:37:33", previous_owners: []>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Puzzle::ActiveRecord_Relation (13.51ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 8.6ms)
+
+
+  
+NoMethodError (undefined method `user.username' for #<Puzzle:0x0055d39b9b31c8>):
+  
+app/controllers/puzzles_controller.rb:6:in `index'
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-07 16:25:05 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.7ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+No serializer found for resource: #<Puzzle id: 1, name: "puzzle1", pieces: 200, missing_pieces: 0, user_id: 1, created_at: "2018-04-04 16:37:33", updated_at: "2018-04-04 16:37:33", previous_owners: []>
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Puzzle::ActiveRecord_Relation (32.04ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 7.8ms)
+
+
+  
+TypeError (can't dup Symbol):
+  
+app/controllers/puzzles_controller.rb:6:in `index'
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-07 16:26:24 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+No serializer found for resource: #<Puzzle id: 1, name: "puzzle1", pieces: 200, missing_pieces: 0, user_id: 1, created_at: "2018-04-04 16:37:33", updated_at: "2018-04-04 16:37:33", previous_owners: []>
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Puzzle::ActiveRecord_Relation (39.32ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `user.email' for #<Puzzle:0x0055d39bbb11f0>
+Did you mean?  user_id):
+  
+app/controllers/puzzles_controller.rb:6:in `index'
+Started GET "/puzzles.json" for 127.0.0.1 at 2018-04-07 16:26:48 -0400
+Processing by PuzzlesController#index as JSON
+  [1m[36mPuzzle Load (0.3ms)[0m  [1m[34mSELECT "puzzles".* FROM "puzzles"[0m
+No serializer found for resource: #<Puzzle id: 1, name: "puzzle1", pieces: 200, missing_pieces: 0, user_id: 1, created_at: "2018-04-04 16:37:33", updated_at: "2018-04-04 16:37:33", previous_owners: []>
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Puzzle::ActiveRecord_Relation (53.89ms)
+Completed 200 OK in 90ms (Views: 75.2ms | ActiveRecord: 5.4ms)
+
+
