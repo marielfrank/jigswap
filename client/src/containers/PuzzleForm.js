@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
-import { createPuzzle } from '../actions/puzzleActions';
+import { createPuzzle, updatePuzzle } from '../actions/puzzleActions';
 
 class PuzzleForm extends React.Component {
     constructor(props){
@@ -22,17 +22,19 @@ class PuzzleForm extends React.Component {
         });
     }
 
-    handleOnCreatePuzzle = (e) => {
+    handleOnSubmitPuzzle = (e) => {
         e.preventDefault();
-        this.props.createPuzzle(this.state);
-        this.props.history.push('/puzzles')
+        this.props.crud === "create" ? 
+            this.props.createPuzzle(this.state) :
+            this.props.updatePuzzle(this.state);
+        this.props.history.push('/puzzles');
     }
 
     render() {
         return (
             <div id="login">
             <h2>Swap Your Puzzle!</h2>
-                <form onSubmit={this.handleOnCreatePuzzle}>
+                <form onSubmit={this.handleOnSubmitPuzzle}>
                     <label htmlFor="name">What is the puzzle called? </label>
                     <br />
                     <input
@@ -65,7 +67,7 @@ class PuzzleForm extends React.Component {
                     <br /><br />
                     <input
                         type="submit"
-                        value="Add Puzzle"
+                        value={this.props.crud === "create" ? "Add Puzzle" : "Update Puzzle"}
                     />
                 </form>
             </div>
@@ -78,4 +80,4 @@ const mapStateToProps = (state) => {
         user_id: state.auth.currentUser.id
     }
 }
-export default PuzzleForm = withRouter(connect(mapStateToProps, {createPuzzle})(PuzzleForm));
+export default PuzzleForm = withRouter(connect(mapStateToProps, {createPuzzle, updatePuzzle})(PuzzleForm));

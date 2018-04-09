@@ -10,7 +10,9 @@ const Puzzle = ({match, puzzles}) => {
                 <h2>{puzzle.name}</h2>
                 <p>Pieces: {puzzle.pieces}</p>
                 <p>Missing pieces: {puzzle.missing_pieces}</p>
-                {/* <p>Contact owner: {puzzle.user.email}</p> */}
+                <p>Contact owner: <a href={`mailto:${puzzle.user.email}`}>{puzzle.user.email}</a></p>
+                <button onClick={editPuzzle}>Edit</button>
+                <button onClick={deletePuzzle}>Delete</button>
             </div>
     }
     return (

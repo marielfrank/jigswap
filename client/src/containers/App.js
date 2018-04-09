@@ -27,7 +27,7 @@ class App extends Component {
             <Route path="/signup" component={Signup} isAuthenticated={isAuthenticated} />
             <Route path="/login" component={Login} isAuthenticated={isAuthenticated} />
             <Route path="/account" component={User} isAuthenticated={isAuthenticated} />
-            <Route exact path="/puzzles/new" component={PuzzleForm} isAuthenticated={isAuthenticated} />
+            <Route exact path="/puzzles/new" component={PuzzleForm} isAuthenticated={isAuthenticated} crud="create" />
             <Route path="/puzzles" component={Puzzles} isAuthenticated={isAuthenticated} />
           <br />
           </div>
