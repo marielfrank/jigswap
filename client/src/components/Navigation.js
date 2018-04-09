@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import logo from '../logo.png';
 import { logout } from '../actions/authActions';
 
@@ -9,6 +9,7 @@ class Navigation extends Component {
     handleLogout = (e) => {
         e.preventDefault();
         this.props.logout();
+        this.props.history.push('/')
     }
 
     render () {
@@ -46,4 +47,4 @@ class Navigation extends Component {
     }
 }
 
-export default Navigation = connect(null, {logout})(Navigation)
+export default Navigation = withRouter(connect(null, {logout})(Navigation));
