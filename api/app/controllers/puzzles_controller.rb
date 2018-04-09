@@ -3,13 +3,13 @@ class PuzzlesController < ApplicationController
     
     def index
         @puzzles = Puzzle.all
-        render json: @puzzles
+        render json: @puzzles, include: :user
     end
 
     def create
         @puzzle = Puzzle.new(puzzle_params)
         if @puzzle && @puzzle.save
-            raise "do something here?".inspect
+            render json: @puzzle
         else
             raise "Add error handling here!".inspect
         end
@@ -38,7 +38,7 @@ class PuzzlesController < ApplicationController
         @puzzle = Puzzle.find(params[:id])
     end
 
-    # def puzzle_params
-    #     params.require(:puzzle).permit(:id, :name, :pieces, :missing_pieces, tag_ids: [], tags_attributes: [:name], reviews_attributes: [:user_id, :rating, :comment], :previous_owners)
-    # end
+    def puzzle_params
+        params.require(:puzzle).permit(:id, :name, :pieces, :missing_pieces, :user_id, reviews_attributes: [:user_id, :rating, :comment] , tags_attributes: [:name])
+    end
 end

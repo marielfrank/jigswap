@@ -1,14 +1,17 @@
 import React from 'react';
-// import { connect } from 'react-redux';
-// import { addPuzzle } from '../actions/puzzleActions';
+import { withRouter } from "react-router-dom";
+import { connect } from 'react-redux';
+import { createPuzzle } from '../actions/puzzleActions';
 
 class PuzzleForm extends React.Component {
     constructor(props){
       super(props);
   
       this.state = {
-        email: '', 
-        password: ''
+        name: '', 
+        pieces: 0,
+        missing_pieces: 0,
+        user_id: this.props.user_id
       };
     }
 
@@ -19,33 +22,44 @@ class PuzzleForm extends React.Component {
         });
     }
 
-    handleOnSignup = (e) => {
+    handleOnCreatePuzzle = (e) => {
         e.preventDefault();
-        this.props.authenticate(this.state);
+        this.props.createPuzzle(this.state);
+        this.props.history.push('/puzzles')
     }
 
     render() {
         return (
             <div id="login">
-            <h2>Add Puzzle</h2>
-                <form onSubmit={this.handleOnSignup}>
-                    <label htmlFor="email">Email: </label>
+            <h2>Swap Your Puzzle!</h2>
+                <form onSubmit={this.handleOnCreatePuzzle}>
+                    <label htmlFor="name">What is the puzzle called? </label>
                     <br />
                     <input
-                        name="email"
-                        id="email"
-                        type="email"
-                        value={this.state.email}
+                        name="name"
+                        id="name"
+                        type="text"
+                        value={this.state.name}
                         onChange={this.handleOnChange}
                     />
                     <br /><br />
-                    <label htmlFor="password">Password:</label>
+                    <label htmlFor="pieces">How many pieces does it have? </label>
                     <br />
                     <input
-                        name="password"
-                        id="password"
-                        type="password"
-                        value={this.state.password}
+                        name="pieces"
+                        id="pieces"
+                        type="number"
+                        value={this.state.pieces}
+                        onChange={this.handleOnChange}
+                    />
+                    <br /><br />
+                    <label htmlFor="missing_pieces">How many missing pieces does it have?</label>
+                    <br />
+                    <input
+                        name="missing_pieces"
+                        id="missing_pieces"
+                        type="number"
+                        value={this.state.missing_pieces}
                         onChange={this.handleOnChange}
                     />
                     <br /><br />
@@ -59,4 +73,9 @@ class PuzzleForm extends React.Component {
     }
 }
 
-export default PuzzleForm //= connect(null, {addPuzzle})(PuzzleForm);
+const mapStateToProps = (state) => {
+    return {
+        user_id: state.auth.currentUser.id
+    }
+}
+export default PuzzleForm = withRouter(connect(mapStateToProps, {createPuzzle})(PuzzleForm));

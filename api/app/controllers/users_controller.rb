@@ -4,8 +4,8 @@ class UsersController < ApplicationController
     before_action :set_user, only: [:show, :update, :destroy]
 
     def index
-        users = User.all
-        render json: users
+        @users = User.all
+        render json: @users, include: :puzzles
     end
 
     def show
@@ -13,9 +13,9 @@ class UsersController < ApplicationController
     end
 
     def create
-        user = User.new(user_params)
-        if user.valid? && user.save
-            render json: user, status: 200
+        @user = User.new(user_params)
+        if @user.valid? && user.save
+            render json: @user, status: 200
         else
             render json: {errors: "We're having issues creating your account..."}
         end
