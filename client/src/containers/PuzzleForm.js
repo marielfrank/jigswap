@@ -24,16 +24,21 @@ class PuzzleForm extends React.Component {
 
     handleOnSubmitPuzzle = (e) => {
         e.preventDefault();
-        this.props.crud === "create" ? 
-            this.props.createPuzzle(this.state) :
+        if (this.props.crud === "create") {
+            this.props.createPuzzle(this.state)
+            this.props.history.push('/puzzles');
+        } else if (this.props.crud === "update") {
             this.props.updatePuzzle(this.state);
-        this.props.history.push('/puzzles');
+            // get puzzle id from e
+            this.props.history.push('/puzzles')
+        }
     }
 
     render() {
         return (
             <div id="login">
             <h2>Swap Your Puzzle!</h2>
+            
                 <form onSubmit={this.handleOnSubmitPuzzle}>
                     <label htmlFor="name">What is the puzzle called? </label>
                     <br />

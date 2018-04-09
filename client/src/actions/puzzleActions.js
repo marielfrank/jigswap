@@ -40,3 +40,11 @@ export function createPuzzle(puzzleDeets) {
             })
     }
 }
+
+export function updatePuzzle(puzzleDeets) {
+    console.log(e)
+}
+
+export function deletePuzzle(puzzleId) {
+    console.log(e)
+}

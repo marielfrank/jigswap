@@ -37,7 +37,6 @@ export const signup = (user) => {
         })
             .then(resp => resp.json())
             .then(jresp => {
-                console.log("user created, about to authenticate")
                 dispatch(authenticate({email: newUser.email, password: newUser.password}));
             })
             .catch((errors) => {
@@ -48,9 +47,7 @@ export const signup = (user) => {
 }
 
 export const authenticate = (credentials) => {
-    console.log("got to authenticate, credentials are:", credentials)
     return dispatch => {
-        console.log("got into dispatch")
         dispatch(authRequest())
 
         return fetch(`${API_URL}/user_token`, {
@@ -70,7 +67,7 @@ export const authenticate = (credentials) => {
             .catch((errors) => {
                 console.log(errors);
                 dispatch(authFailure(errors))
-                localStorage.removeItem('token')
+                localStorage.clear()
             })
     }
 }
