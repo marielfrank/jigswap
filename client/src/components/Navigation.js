@@ -5,48 +5,44 @@ import logo from '../logo.png';
 import { logout } from '../actions/authActions';
 
 class Navigation extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            redirect: false
-        }
-    }
-    handleLogout = () => {
-        this.props.logout();
-        // this.setState({
-        //     redirect: true
-        // })
-    }
-    render () {
-        const navButtons = (
-            localStorage.token ? (
-                <div>
-                    <Link to="/account">Account</Link>
-                    <Link to="/puzzles/new">Add Puzzle</Link>
-                    <button onClick={this.handleLogout} >Log Out</button>
-                </div>
-            ) : (
-                <div>
-                    <Link to='/login' >Log In</Link>
-                    <Link to='/signup' >Sign Up</Link>
-                </div>
-            )
-        );
 
-        // if (!!this.state.redirect) {
-        //     return <Redirect to='/login' />
-        // } else {
-            return (
-                <nav>
-                    <Link to="/">
-                        <div id="logo">
-                            <img src={logo} className="App-logo" alt="logo" />
-                        </div>
-                    </Link>
-                    {navButtons}
-                </nav>
+    handleLogout = (e) => {
+        e.preventDefault();
+        this.props.logout();
+    }
+
+    render () {
+        const logoLink = (
+            <div id="logo">
+                <img src={logo} className="App-logo" alt="logo" />
+            </div>
             )
-        // }
+    
+        const loggedInNav = (
+            <nav>
+                <Link to="/puzzles">
+                    <div id="logo">
+                        <img src={logo} className="App-logo" alt="logo" />
+                    </div>
+                </Link>
+                <Link to="/account">Account</Link>
+                <Link to="/puzzles/new">Add Puzzle</Link>
+                <button onClick={(e) => this.handleLogout(e)} >Log Out</button>
+            </nav>
+        );
+    
+        const welcomeNav = (
+            <nav>
+                <Link to="/">
+                    {logoLink}
+                </Link>
+                <Link to="/login" >Log In</Link>
+                <Link to="/signup" >Sign Up</Link>
+            </nav>
+        )
+        return (
+            <div>{this.props.isAuthenticated ? loggedInNav : welcomeNav}</div>
+        )
     }
 }
 

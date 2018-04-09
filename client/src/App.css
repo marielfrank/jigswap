@@ -19,12 +19,28 @@
 }
 
 nav {
-  padding: 20px;
-  background: #71adc7;
+  background: rgb(46, 151, 158);
 }
 
-nav a {
+nav, footer {
+  padding: 20px 30px;
   color: #fff;
+}
+
+nav a, footer a {
+  color: #fff;
+}
+
+footer {
+  background: #000;
+}
+
+.App-header {
+  padding: 0 30px;
+}
+
+#main-div {
+  padding: 0 30px;
 }
 
 .puzzle-list-item {

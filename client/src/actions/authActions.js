@@ -26,7 +26,6 @@ const authFailure = (errors) => {
 export const signup = (user) => {
     const newUser = user
     return dispatch => {
-        // dispatch(authRequest())
         
         return fetch(`${API_URL}/users`, {
             method: 'post',
@@ -39,7 +38,7 @@ export const signup = (user) => {
             .then(resp => resp.json())
             .then(jresp => {
                 console.log("user created, about to authenticate")
-                authenticate({email: newUser.email, password: newUser.password});
+                dispatch(authenticate({email: newUser.email, password: newUser.password}));
             })
             .catch((errors) => {
                 console.log(errors)
@@ -95,10 +94,8 @@ const getUser = (credentials) => {
 }
 
 export const logout = () => {
-    console.log("logging out!")
     return dispatch => {
-        console.log("inside dispatch function!")
-        localStorage.removeItem('token')
-        return dispatch({type: 'LOGOUT'})
+        localStorage.clear();
+        return dispatch({type: 'LOGOUT'});
     }
 }
