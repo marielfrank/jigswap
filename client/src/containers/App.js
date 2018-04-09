@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux'
 import Navigation from '../components/Navigation';
-import Welcome from './Welcome';
+import Welcome from '../components/Welcome';
 import Signup from './Signup';
 import Login from './Login';
 import PuzzleForm from './PuzzleForm';
