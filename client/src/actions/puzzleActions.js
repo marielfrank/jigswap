@@ -20,7 +20,7 @@ export function getPuzzle(id) {
 export function createPuzzle(puzzleDeets) {
     return dispatch => {
         return fetch(`${API_URL}/puzzles`, {
-            method: 'post',
+            method: 'POST',
             body: JSON.stringify({puzzle: puzzleDeets}),
             headers: {
                 "Accept":"application/json",
@@ -42,10 +42,9 @@ export function createPuzzle(puzzleDeets) {
 }
 
 export function updatePuzzle(puzzleDeets) {
-    debugger
     return dispatch => {
         return fetch(`${API_URL}/puzzles/${puzzleDeets.id}`, {
-            method: 'patch',
+            method: 'PATCH',
             body: JSON.stringify({puzzle: puzzleDeets}),
             headers: {
                 "Accept":"application/json",
@@ -67,5 +66,25 @@ export function updatePuzzle(puzzleDeets) {
 }
 
 export function deletePuzzle(puzzleId) {
-    console.log(puzzleId)
+    return dispatch => {
+        console.log("got into dispatch")
+        return fetch(`${API_URL}/puzzles/${puzzleId}`, {
+            method: 'DELETE',
+            headers: {
+                "Accept":"application/json",
+                "Content-Type":"application/json"
+            }
+        })
+            .then(resp => resp.json())
+            .then(jresp => {
+                dispatch({
+                    type: 'DELETE_PUZZLE',
+                    payload: puzzleId
+                })
+            })
+            .catch((errors) => {
+                console.log(errors)
+                // dispatch(authFailure(errors))
+            })
+    }
 }

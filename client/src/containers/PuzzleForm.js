@@ -5,14 +5,27 @@ import { createPuzzle, updatePuzzle } from '../actions/puzzleActions';
 
 class PuzzleForm extends React.Component {
     constructor(props){
-      super(props);
+        super(props);
   
-      this.state = {
-        name: '', 
-        pieces: 0,
-        missing_pieces: 0,
-        user_id: this.props.user_id
-      };
+        if (this.props.crud === "create") {
+            this.state = {
+                name: '', 
+                pieces: 0,
+                missing_pieces: 0,
+                user_id: this.props.user_id
+            } 
+        } else {
+            const puzzle = this.props.puzzles.find(p => p.id === parseInt(this.props.match.params.puzzleId, 10));
+            this.state = {
+                id: puzzle.id,
+                name: puzzle.name,
+                pieces: puzzle.pieces,
+                missing_pieces: puzzle.missing_pieces,
+                user_id: puzzle.user.id
+            }
+        }
+        
+
     }
 
     handleOnChange = (e) => {
@@ -24,15 +37,13 @@ class PuzzleForm extends React.Component {
 
     handleOnSubmitPuzzle = (e) => {
         e.preventDefault();
-        console.log("in handleOnSubmit, e is", e)
-        console.log("in handleOnSubmit, props is", this.props)
         if (this.props.crud === "create") {
             this.props.createPuzzle(this.state)
             this.props.history.push('/puzzles');
         } else if (this.props.crud === "update") {
             this.props.updatePuzzle(this.state);
-            // get puzzle id from e
-            this.props.history.push('/puzzles')
+            const puzzleId = e.target.dataset.id;
+            this.props.history.push(`/puzzles/${puzzleId}`);
         }
     }
 

@@ -19,10 +19,9 @@ class Puzzles extends Component {
 
     handleDeletePuzzle = (e) => {
         e.preventDefault();
-        console.log(e)
-        debugger;
         const puzzleId = e.target.dataset.id
-        deletePuzzle(puzzleId);
+        this.props.deletePuzzle(puzzleId);
+        this.props.history.push(`/puzzles/`);
     }
 
     render() {
@@ -38,11 +37,16 @@ class Puzzles extends Component {
                     />
                 }/>
 
-                <Route path={`${this.props.match.url}/:puzzleId/edit`} render={() => <PuzzleForm crud="update" />} />
+                <Route 
+                    path={`${this.props.match.url}/:puzzleId/edit`} 
+                    render={() => <PuzzleForm crud="update" puzzles={puzzles} />} 
+                />
                     
                 <Route exact path={this.props.match.url} render={(puzzleLinks) => 
                     (<div className="grid-container" >{puzzles.map(puz => 
-                        <Link className="puzzle-list-item grid-item" key={puz.id} to={`/puzzles/${puz.id}`}>{puz.name} - {puz.pieces} pieces</Link>
+                        <Link className="puzzle-list-item grid-item" key={puz.id} to={`/puzzles/${puz.id}`}>
+                            {puz.name} - {puz.pieces} pieces
+                        </Link>
                     )}</div>)
                     } />
                 
