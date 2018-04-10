@@ -19,9 +19,6 @@ class App extends Component {
       <Router>
         <div className="App">
           <Navigation isAuthenticated={isAuthenticated} />
-          <header className="App-header">
-            <h1>Jigswap</h1>
-          </header>
           <div id="main-div">
             <Route exact path="/" component={Welcome} isAuthenticated={isAuthenticated} />
             <Route path="/signup" component={Signup} isAuthenticated={isAuthenticated} />

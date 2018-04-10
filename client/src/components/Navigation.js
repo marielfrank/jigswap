@@ -16,19 +16,28 @@ class Navigation extends Component {
         const logoLink = (
             <div id="logo">
                 <img src={logo} className="App-logo" alt="logo" />
+                <div className="App-title">Jigswap</div>
             </div>
             )
     
         const loggedInNav = (
             <nav>
                 <Link to="/puzzles">
-                    <div id="logo">
-                        <img src={logo} className="App-logo" alt="logo" />
-                    </div>
+                    {logoLink}
                 </Link>
-                <Link to="/account">Account</Link>
-                <Link to="/puzzles/new">Add Puzzle</Link>
-                <button onClick={(e) => this.handleLogout(e)} >Log Out</button>
+                <div id="menuToggle">
+                    <input type="checkbox" />
+                    
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    
+                    <ul id="menu">
+                        <Link to="/account"><li>Account</li></Link>
+                        <Link to="/puzzles/new"><li>Add Puzzle</li></Link>
+                        <button onClick={(e) => this.handleLogout(e)} ><li>Log Out</li></button>
+                    </ul>
+                </div>
             </nav>
         );
     
@@ -37,8 +46,18 @@ class Navigation extends Component {
                 <Link to="/">
                     {logoLink}
                 </Link>
-                <Link to="/login" >Log In</Link>
-                <Link to="/signup" >Sign Up</Link>
+                <div id="menuToggle">
+                    <input type="checkbox" />
+                    
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    
+                    <ul id="menu">
+                        <Link to="/login" ><li>Log In</li></Link>
+                        <Link to="/signup" ><li>Sign Up</li></Link>
+                    </ul>
+                </div>
             </nav>
         )
         return (
