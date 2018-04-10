@@ -41,8 +41,8 @@ class Puzzles extends Component {
                 <Route path={`${this.props.match.url}/:puzzleId/edit`} render={() => <PuzzleForm crud="update" />} />
                     
                 <Route exact path={this.props.match.url} render={(puzzleLinks) => 
-                    (<div>{puzzles.map(puz => 
-                        <Link className="puzzle-list-item" key={puz.id} to={`/puzzles/${puz.id}`}>{puz.name} - {puz.pieces} pieces</Link>
+                    (<div className="grid-container" >{puzzles.map(puz => 
+                        <Link className="puzzle-list-item grid-item" key={puz.id} to={`/puzzles/${puz.id}`}>{puz.name} - {puz.pieces} pieces</Link>
                     )}</div>)
                     } />
                 
