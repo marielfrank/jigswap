@@ -40,3 +40,32 @@ export function createPuzzle(puzzleDeets) {
             })
     }
 }
+
+export function updatePuzzle(puzzleDeets) {
+    debugger
+    return dispatch => {
+        return fetch(`${API_URL}/puzzles/${puzzleDeets.id}`, {
+            method: 'patch',
+            body: JSON.stringify({puzzle: puzzleDeets}),
+            headers: {
+                "Accept":"application/json",
+                "Content-Type":"application/json"
+            }
+        })
+            .then(resp => resp.json())
+            .then(jresp => {
+                dispatch({
+                    type: 'UPDATE_PUZZLE',
+                    payload: jresp
+                })
+            })
+            .catch((errors) => {
+                console.log(errors)
+                // dispatch(authFailure(errors))
+            })
+    }
+}
+
+export function deletePuzzle(puzzleId) {
+    console.log(puzzleId)
+}

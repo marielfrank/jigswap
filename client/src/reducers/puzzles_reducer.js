@@ -6,6 +6,9 @@ export default ( state={ loading: false, puzzles: [] }, action ) => {
             return {...state, puzzles: action.payload, loading: false}
         case 'CREATE_PUZZLE':
             return {...state, puzzles: state.puzzles.concat(action.payload)}
+        case 'UPDATE_PUZZLE':
+        // add update
+            return {...state }
         default:
             return state
     }

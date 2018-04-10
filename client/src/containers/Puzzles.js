@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchPuzzles } from '../actions/puzzleActions';
+import { fetchPuzzles, deletePuzzle } from '../actions/puzzleActions';
 import Puzzle from '../components/Puzzle'
+import PuzzleForm from './PuzzleForm';
 
 class Puzzles extends Component {
 
@@ -10,16 +11,34 @@ class Puzzles extends Component {
         this.props.fetchPuzzles();
     }
 
+    showPuzzleForm = (e) => {
+        e.preventDefault();
+        const puzzleId = e.target.dataset.id
+        this.props.history.push(`/puzzles/${puzzleId}/edit`)
+    }
+
+    handleDeletePuzzle = (e) => {
+        e.preventDefault();
+        console.log(e)
+        debugger;
+        const puzzleId = e.target.dataset.id
+        deletePuzzle(puzzleId);
+    }
+
     render() {
-        const puzzles = this.props.puzzleState.puzzles
+        const puzzles = this.props.puzzleState.puzzles;
         return (
             <div id="puzzle-list">
-                <Route path={`${this.props.match.url}/:puzzleId`} render={ (props) => 
+                <Route exact path={`${this.props.match.url}/:puzzleId`} render={ (props) => 
                     <Puzzle 
-                        puzzles={puzzles}  
+                        puzzles={puzzles} 
+                        handleDeletePuzzle={this.handleDeletePuzzle}
+                        showPuzzleForm={this.showPuzzleForm}
                         {...props} 
                     />
                 }/>
+
+                <Route path={`${this.props.match.url}/:puzzleId/edit`} render={() => <PuzzleForm crud="update" />} />
                     
                 <Route exact path={this.props.match.url} render={(puzzleLinks) => 
                     (<div>{puzzles.map(puz => 
@@ -38,4 +57,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default Puzzles = connect(mapStateToProps, {fetchPuzzles})(Puzzles);
+export default Puzzles = withRouter(connect(mapStateToProps, {fetchPuzzles, deletePuzzle})(Puzzles));
