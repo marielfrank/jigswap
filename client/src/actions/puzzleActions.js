@@ -66,7 +66,6 @@ export function updatePuzzle(puzzleDeets) {
 
 export function deletePuzzle(puzzleId) {
     return dispatch => {
-        console.log("got into dispatch")
         return fetch(`${API_URL}/puzzles/${puzzleId}`, {
             method: 'DELETE',
             headers: {

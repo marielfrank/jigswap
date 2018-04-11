@@ -42,7 +42,13 @@ class Puzzles extends Component {
     render() {
         const puzzles = this.state.puzzles;
         const puzzlesDiv = (
-            <div id="puzzle-list">
+            <div id="puzzles">
+                <Route 
+                    exact path="/puzzles/new" 
+                    render={() => 
+                        <PuzzleForm crud="create" />
+                    } 
+                />
                 <Route 
                     exact path={`${this.props.match.url}/:puzzleId`} 
                     render={ (props) => 

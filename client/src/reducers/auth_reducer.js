@@ -34,7 +34,6 @@ export default (state = initialState, action) => {
             }
 
         case 'LOGOUT':
-            console.log("got to logout reducer")
             return {...state, 
                 isAuthenticated: false,
                 isAuthenticating: false,

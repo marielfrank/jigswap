@@ -5,7 +5,6 @@ import Navigation from './Navigation';
 import Welcome from '../components/Welcome';
 import Signup from './Signup';
 import Login from './Login';
-import PuzzleForm from './PuzzleForm';
 import PuzzlesContainer from './PuzzlesContainer';
 import User from '../components/User';
 import Footer from '../components/Footer';
@@ -15,17 +14,25 @@ class App extends Component {
   
   render() {
     const {isAuthenticated, user} = this.props
+    const loggedOut = (
+      <div>
+        <Route exact path="/" render={() => <Welcome isAuthenticated={isAuthenticated} />} />
+        <Route path="/signup" render={() => <Signup isAuthenticated={isAuthenticated} />} />
+        <Route path="/login" render={() => <Login isAuthenticated={isAuthenticated} />} />
+      </div>
+      )
+      const loggedIn = (
+        <div>
+          <Route path="/account" render={() => <User user={user} isAuthenticated={isAuthenticated} />} />
+          <Route path="/puzzles" component={PuzzlesContainer} isAuthenticated={isAuthenticated} />
+        </div>
+        )
     return (
       <Router>
         <div className="App">
           <Navigation isAuthenticated={isAuthenticated} />
           <div id="main-div">
-            <Route exact path="/" render={() => <Welcome isAuthenticated={isAuthenticated} />} />
-            <Route path="/signup" render={() => <Signup isAuthenticated={isAuthenticated} />} />
-            <Route path="/login" render={() => <Login isAuthenticated={isAuthenticated} />} />
-            <Route path="/account" render={() => <User user={user} isAuthenticated={isAuthenticated} />} />
-            <Route exact path="/puzzles/new"  render={() => <PuzzleForm crud="create" isAuthenticated={isAuthenticated} />} />
-            <Route path="/puzzles" component={PuzzlesContainer} isAuthenticated={isAuthenticated} />
+            {isAuthenticated ? loggedIn : loggedOut}
           <br />
           </div>
 
