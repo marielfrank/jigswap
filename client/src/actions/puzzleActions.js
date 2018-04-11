@@ -60,7 +60,6 @@ export function updatePuzzle(puzzleDeets) {
             })
             .catch((errors) => {
                 console.log(errors)
-                // dispatch(authFailure(errors))
             })
     }
 }
@@ -75,8 +74,7 @@ export function deletePuzzle(puzzleId) {
                 "Content-Type":"application/json"
             }
         })
-            .then(resp => resp.json())
-            .then(jresp => {
+            .then(() => {
                 dispatch({
                     type: 'DELETE_PUZZLE',
                     payload: puzzleId
@@ -84,7 +82,6 @@ export function deletePuzzle(puzzleId) {
             })
             .catch((errors) => {
                 console.log(errors)
-                // dispatch(authFailure(errors))
             })
     }
 }
