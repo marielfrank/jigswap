@@ -28,7 +28,6 @@ class PuzzlesController < ApplicationController
     end
 
     def destroy
-        name = @puzzle.name
         @puzzle.delete
     end
 

@@ -9,12 +9,12 @@ class UsersController < ApplicationController
     end
 
     def show
-        render json: user
+        render json: @user
     end
 
     def create
         @user = User.new(user_params)
-        if @user.valid? && user.save
+        if @user.valid? && @user.save
             render json: @user, status: 200
         else
             render json: {errors: "We're having issues creating your account..."}
