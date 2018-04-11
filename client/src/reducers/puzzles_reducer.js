@@ -11,7 +11,8 @@ export default ( state={ loading: false, puzzles: [] }, action ) => {
             const index = state.puzzles.findIndex(p => p.id === puzzle.id);
             return {...state, puzzles: [...state.puzzles.slice(0, index), puzzle, ...state.puzzles.slice(index + 1)]}
         case 'DELETE_PUZZLE':
-            return {...state, puzzles: state.puzzles.filter(puz => puz.id !== action.payload.puzzleId)}
+            const newPuzState = state.puzzles.filter(puz => puz.id !== parseInt(action.payload, 10))
+            return {...state, puzzles: newPuzState}
         default:
             return state
     }
