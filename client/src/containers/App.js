@@ -14,17 +14,17 @@ import '../App.css';
 class App extends Component {
   
   render() {
-    const {isAuthenticated} = this.props
+    const {isAuthenticated, user} = this.props
     return (
       <Router>
         <div className="App">
           <Navigation isAuthenticated={isAuthenticated} />
           <div id="main-div">
-            <Route exact path="/" component={Welcome} isAuthenticated={isAuthenticated} />
-            <Route path="/signup" component={Signup} isAuthenticated={isAuthenticated} />
-            <Route path="/login" component={Login} isAuthenticated={isAuthenticated} />
-            <Route path="/account" component={User} isAuthenticated={isAuthenticated} />
-            <Route exact path="/puzzles/new"  render={() => <PuzzleForm crud="create" />} isAuthenticated={isAuthenticated} crud="create" />
+            <Route exact path="/" render={() => <Welcome isAuthenticated={isAuthenticated} />} />
+            <Route path="/signup" render={() => <Signup isAuthenticated={isAuthenticated} />} />
+            <Route path="/login" render={() => <Login isAuthenticated={isAuthenticated} />} />
+            <Route path="/account" render={() => <User user={user} isAuthenticated={isAuthenticated} />} />
+            <Route exact path="/puzzles/new"  render={() => <PuzzleForm crud="create" isAuthenticated={isAuthenticated} />} />
             <Route path="/puzzles" component={PuzzlesContainer} isAuthenticated={isAuthenticated} />
           <br />
           </div>
@@ -38,7 +38,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-      isAuthenticated: state.auth.isAuthenticated
+      isAuthenticated: state.auth.isAuthenticated,
+      user: state.auth.currentUser
   }
 }
 
