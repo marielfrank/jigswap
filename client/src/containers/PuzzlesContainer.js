@@ -57,6 +57,7 @@ class Puzzles extends Component {
                             puzzles={puzzles} 
                             handleDeletePuzzle={this.handleDeletePuzzle}
                             showPuzzleForm={this.showPuzzleForm}
+                            userId={this.props.userId}
                             {...props} 
                         />
                     }
@@ -76,6 +77,7 @@ class Puzzles extends Component {
         )
 
         const loading = <p>Loading puzzles...</p>
+
         return (
             <div>
                 { this.props.loadingPuzzles ? loading : puzzlesDiv }
@@ -87,7 +89,8 @@ class Puzzles extends Component {
 const mapStateToProps = (state) => {
     return {
         puzzleState: state.puzzles,
-        loadingPuzzles: state.loading
+        loadingPuzzles: state.puzzles.loading,
+        userId: state.auth.currentUser.id
     }
 }
 
