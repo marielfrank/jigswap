@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, withRouter } from 'react-router-dom';
+import { Route, withRouter, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchPuzzles, deletePuzzle } from '../actions/puzzleActions';
 import Puzzle from '../components/Puzzle'
@@ -43,6 +43,7 @@ class Puzzles extends Component {
         const puzzles = this.state.puzzles;
         const puzzlesDiv = (
             <div id="puzzles">
+                <Switch>
                 <Route 
                     exact path="/puzzles/new" 
                     render={() => 
@@ -70,7 +71,7 @@ class Puzzles extends Component {
                     exact path={this.props.match.url} 
                     render={() => <PuzzleList puzzles={puzzles} />} 
                 />
-                
+                </Switch>
             </div>
         )
 
