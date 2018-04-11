@@ -191,6 +191,7 @@ nav button {
 
 nav button:hover {
   text-decoration: underline;
+  background: none;
 }
 
 nav, footer {

@@ -28,7 +28,7 @@ export const signup = (user) => {
     return dispatch => {
         
         return fetch(`${API_URL}/users`, {
-            method: 'post',
+            method: 'POST',
             body: JSON.stringify({user: user}),
             headers: {
                 "Accept":"application/json",

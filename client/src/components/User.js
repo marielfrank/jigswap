@@ -2,7 +2,6 @@ import React from 'react';
 import PuzzleList from './PuzzleList';
 
 const User = ({user}) => {
-    console.log(user)
     return (
         <div id="user">
         <h2>Your account</h2>
