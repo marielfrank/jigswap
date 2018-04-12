@@ -16,15 +16,15 @@ class App extends Component {
     const {isAuthenticated, user} = this.props
     const loggedOut = (
       <div>
-        <Route exact path="/" render={() => <Welcome isAuthenticated={isAuthenticated} />} />
-        <Route path="/signup" render={() => <Signup isAuthenticated={isAuthenticated} />} />
-        <Route path="/login" render={() => <Login isAuthenticated={isAuthenticated} />} />
+        <Route exact path="/" component={Welcome} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/login" component={Login} />
       </div>
       )
       const loggedIn = (
         <div>
-          <Route path="/account" render={() => <User user={user} isAuthenticated={isAuthenticated} />} />
-          <Route path="/puzzles" component={PuzzlesContainer} isAuthenticated={isAuthenticated} />
+          <Route path="/account" render={() => <User user={user} />} />
+          <Route path="/puzzles" component={PuzzlesContainer} />
         </div>
         )
     return (
